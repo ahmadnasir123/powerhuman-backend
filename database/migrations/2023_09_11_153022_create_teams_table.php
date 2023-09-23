@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('icon');
-            $table->bigInteger('company-id')->unsigned();
+            $table->bigInteger('company_id')->unsigned();
 
             $table->softDeletes();
             $table->timestamps();

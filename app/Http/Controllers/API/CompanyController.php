@@ -24,7 +24,7 @@ class CompanyController extends Controller
         $companyQuery = Company::with(['users'])->whereHas('users', function ($query) {
             $query->where('user_id', Auth::id());
         });
-        
+
         // Get single data
         if ($id) {
             $company = $companyQuery->find($id);
@@ -102,7 +102,7 @@ class CompanyController extends Controller
             // Update Company
             $company->update([
                 'name' => $request->name,
-                'logo' => $path
+                'logo' => isset($path) ? $path : $company->logo,
             ]);
 
             return ResponseFormatter::success($company, 'Company updated');
