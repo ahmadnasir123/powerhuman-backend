@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('photo')->nullable();
 
+            // $table->bigInteger('company_id')->unsigned(); 
             $table->bigInteger('team_id')->unsigned(); 
             $table->bigInteger('role_id')->unsigned();
             
